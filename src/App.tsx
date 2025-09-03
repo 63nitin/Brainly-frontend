@@ -1,16 +1,17 @@
+import Dashboard from "./pages/Dashboard";
+import { Routes, Route, BrowserRouter } from "react-router-dom";
+import { Signup } from "./pages/Signup";
+import { Signin } from "./pages/Signin";
 
-import { Button } from "./components/ui/Button"
-import { PlusIcon } from "./icons/PlusIcon"
-import { ShareIcon } from "./icons/ShareIcon"
+
 export default function App(){
-  return(
-    <div>
-      <h1 className="">Brainly....</h1>
-      <Button startIcon={<PlusIcon size="sm"/>} 
-      endIcon= {<ShareIcon size="md"/>} 
-       variant="secondary" size="sm"
-        onClick={() => {}} text={"asdasd"}/>
-        
-    </div>
+  return (
+    <BrowserRouter>
+    <Routes>
+      <Route path="/signup" element={<Signup/>} />
+       <Route path="/signin" element={<Signin/>} />
+        <Route path="/dashboard" element={<Dashboard/>} />
+    </Routes>
+    </BrowserRouter>
   )
 }
